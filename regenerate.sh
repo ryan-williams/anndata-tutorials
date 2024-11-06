@@ -19,5 +19,5 @@ fi
 for nb in "$@"; do
     nb="${nb%.ipynb}.ipynb"
     echo "Executing nb: $nb" >&2
-    docker run -i --rm --name $name -v $PWD:/src "$name" "$nb"
+    docker run -i --rm "--name=$name" -v "$PWD:/src" "$name" "$nb"
 done
